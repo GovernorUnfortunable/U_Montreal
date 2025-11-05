@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## <span style="color:rgb(20, 56, 101)">Navigating Multiplicity in Global Knowledge</span>
+
+### <span style="color:rgb(20, 56, 101)">*Mapping and Grounding Global Research in Language-specific Spaces* </span>
+
+<div style="text-align: left;"><span style="color:rgb(20, 56, 101)"><b>Presented by:</b>
+<br>Matías F. Milia, Ph.D. </span> 
+<br>
+<span style="font-variant: small-caps;color:rgb(140, 117, 53);font-size: 0.8em;"><em>Postdoctoral Research Fellow</em>, Department of Anthropology, University Notre Dame, USA; <br>
+<em>Visiting Professor</em>, Sociology Department, UAM-A (upcoming) </span>
+<br> <br>
+Rigas Arvanitis, Ph.D. <br> 
+<span style="font-variant: small-caps;color:rgb(140, 117, 53);font-size: 0.8em;"><em>Research Director</em>, IRD; <em>Director</em>, CEPED; <br>
+<em>Chair</em>, Global Research Institute of Paris, U. Paris Cité </span>
+</div>
+
+
+<div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 30px; gap: 30px;"> <img src="https://anthropology.nd.edu/assets/577902/600x600/matia_milia_headshot.jpg" alt="Mugshot Matias Milia" style="border-radius: 80%; width: 300px; height: 300px; object-fit: cover; border: 4px solid #3498db;"> <img src="https://loop.frontiersin.org/images/profile/817387/203" alt="Second Image" style="border-radius: 80%; width: 300px; height: 300px; object-fit: cover; border: 4px solid #3498db;"> </div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## For today 📝 ✅
+
+1. Presenting the upcoming book chapter (Brill 2025)
+2. Situate this chapter in the work ahead: book project
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Mapping multiplicity 🗺 
+
+<img src="Images (screenshots, pitctures, etc.)/Screenshot 2025-02-25 at 5.50.41 PM.png" alt="" style="object-fit: scale-down">
+
+DOI: [10.31235/osf.io/6wbc8_v1](https://doi.org/10.31235/osf.io/6wbc8_v1)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Social Research as a Mediator for Globality 🌍 🌎
+- **Early 21st century**: cognitive shift (unprecedented flows in ideas, goods, people, information)
+- **Interdependence** of processes in different geographies working a different scales, but in a coordinated manner. 
+- What strikes at first as an **economic issue** ↪ an **epistemological issue** (Grataloup, 2007, 2009)
+	- How to look at this new phenomenon?
+	- How to account for new social, economic, political, and cultural relations?
+    - How to describe a multidimensional transformation with multiple forces?
+   
+- **Globalization** (concept) rises in this context to capture this **multidimensional transformation** (social, economic, political, cultural).
+- **Social research** rises as a key piece to navigate the new (global) world.
+
+<aside class="notes"><p>aware of others and otherness; interdependence fractures unity. Unintended effects/consequences of connecting geographical positions to historical processes (dialectical relationship among different scales).</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Globalization: beyond an economic sense 📈 💰
+- In **Economy**, the shift from trade ↔ markets (Polanyi et. al. 1957) to new forms of economic governance (Callon 2017; Gereffi et. al. 2005)
+- **Change** is pacing up: institutions and social structures change now in the course of a person's timeline (Abott 2016)
+- Increasing **fragmentation** (diversity in forces and actors) of the social world (in the midst of *integration* processes). 
+- Scientific **cosmopolitanisms**: intertwining of global and local traditions in an expanding but uneven scientific landscape (Feld et. al. 2019).
+- Globalization research provides an opportunity to **empirically examine these scientific cosmopolitanisms** and better understand world-sized social processes. 
+   
+- This is a **synchronic** and **systemic** look at **otherness** and **similarity** (Grataloup 2009)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Research design 📝 📐
+
+- We will look at the thematic boundaries of ‘epistemic communities’ discussing globalization
+- **Objective**: Empirically map thematic boundaries of 'epistemic communities' studying globalization across three languages, English, French, and Spanish. 
+- **Timeframe** (2009-2021): Examining research 20 years after the term's coinage (Latour 1991, Sklair 1991, Hannerz 1992, Featherstone 1990)
+- **Methodology**: Comparative content analysis of globalization literature across three languages:
+    - English (Web of Science)
+    - French (HAL-SHS)
+    - Spanish (SciELO)*
+- **Focus**: Identify critical differences in how _Globalization_ is studied and what other research objects are addressed in language-bounded research landscapes.
+   
+- **Purpose**: Illuminate variations in conceptual understanding across linguistic communities.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Data Sources Across Three Languages 🇬‍🇧 🇫‍🇷 🇪🇸
+
+| **Language** | **Source**                 | **Key Characteristics**                                                                                                                                                                                        |
+| ------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **English**  | Web of Science (Clarivate) | • "Central" mainstream publications and international recognition<br>• Lingua franca for scientific circles<br>• Reflects Anglo-American knowledge hegemony                                                    |
+| **French**   | HAL-SHS Archive            | • National reference for France's social sciences<br>• French-speaking in other parts of the world (Canada, Africa)<br>• Balanced collaboration networks<br>• Horizontal research landscape                    |
+| **Spanish**  | SciELO                     | • Latin America-focused platform (since 1998)<br>• Publishing as "making public" and sharing rather than profit-driven activity<br>• Indexes journals in Iberoamerica & Global South (in Spanish & Portuguese) |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Comparative Analysis Strategy ▶ ◀
+
+- **Overall structure**: how is globalization studied in three languages?
+- **First tier:** shared objects across languages
+    - Social movements
+    - Climate change
+    - Higher education
+- **Second tier:** language-specific objects
+    - **French:** "Collectivités locales" (local authorities)
+    - **Spanish:** "Apertura Comercial" (trade openness and structural transformations)
+- Operationalized approach to *otherness* and *similarity* in connected processes
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Workflow for semi-automatic text analysis 📖 🔢
+<img src="Images (screenshots, pitctures, etc.)/Pasted image 20250225174347.png" alt="100%" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Interpretation Notes 🗒
+
+| **Level of Analysis** | **Focus**                 | **Purpose**                                                    |
+| --------------------- | ------------------------- | -------------------------------------------------------------- |
+| **Macro Level**       | Overall network structure | Identify primary clusters representing emerging research areas |
+| **Micro Level**       | Individual clusters       | Examine critical nodes and connections within specific domains |
+
+| **Visualization Element** | **Representation**                            | **Interpretation**                                   |
+| ------------------------- | --------------------------------------------- | ---------------------------------------------------- |
+| **Node Size**             | Term frequency                                | Amount of attention received in the corpus           |
+| **Node Position**         | Structural equivalence, centrality, closeness | Semantic relationships between terms                 |
+| **Links**                 | Connections between terms                     | Presence of relationship (without intensity measure) |
+| **Heavy Connected Nodes** | Terms with many links                         | Key articulation points in the semantic network      |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The World in Parcels: *Globalization* 🇬‍🇧 
+
+<iframe width="100%" height="90%" src="https://retina.cortext.net/#/embed/?url=https%3A%2F%2Fassets.cortext.net%2Fdocs%2Fb547a2fa26a77569186372c1ddfbbaef&sa[]=w&sa[]=i&sa[]=o&sa[]=re&sa[]=be&ca=cll&st[]=w&st[]=i&st[]=o&st[]=cll&st[]=re&st[]=be&lt=1.974&ls=10&le=22" frameBorder="0" title="Retina" allowFullScreen ></iframe>
+
+<aside class="notes"><p>Domain-specific terms, divide between economy and global processes, institutions, and social structures (focus on international governance)</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## An European Plating: *mondialisation* or *globalisation* 🇫‍🇷
+
+<iframe width="100%" height="90%" src="https://retina.cortext.net/#/embed/?url=https%3A%2F%2Fassets.cortext.net%2Fdocs%2F7c239ba38b8486484f24cc965fd41bfb&sa[]=w&sa[]=i&sa[]=o&sa[]=re&sa[]=be&ca=cll&st[]=w&st[]=i&st[]=o&st[]=cll&st[]=re&st[]=be&lt=1.974&ls=10&le=22" frameBorder="0" title="Mond or Glob Française" allowFullScreen ></iframe>
+<aside class="notes"><p>governance happens through european union; specific geographical demarcations –the local, the regional, and the rural.</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## An Outsider's Perspective: *globalización* 🇪🇸
+
+<iframe width="100%" height="90%" src="https://retina.cortext.net/#/embed/?url=https%3A%2F%2Fassets.cortext.net%2Fdocs%2F3d0429222ce0cf62c217ac5b7d2d65f1&sa[]=w&sa[]=i&sa[]=o&sa[]=re&sa[]=be&ca=cll&st[]=w&st[]=i&st[]=o&st[]=cll&st[]=re&st[]=be&lt=1.974&ls=10&le=22" frameBorder="0" title="Globalizacion LatAm" allowFullScreen ></iframe>
+<aside class="notes"><p>effects of global transformations; dependency and development.</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Social Movements 🪧✊🏻
+
+| **Language** | **Position in Corpus**                             | **Connected Nodes**                                            | **Framing**                                                                                                                 |
+| ------------ | -------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **English**  | Not central                                        | • Civil society<br>• Democratic movements. <br>• Global South. | Focus on new power relations <br>competing with Nation-State <br>(human rights, public health)                              |
+| **French**   | Connected to history <br>and local decision-making | • Public space<br>• Collective memory<br>• Local politics      | Historically framed through <br> French Revolution tradition; emphasis on 90s public action <br>for sustainable development |
+| **Spanish**  | Central position                                   | • Migration<br>• Higher education<br>• Foreign policy          | Topic of empirical research on transformation <br>processes and political <br>alternatives in Latin America                 |
+
+🥡 **Takeaway:** Social movements reflect the "think global, act local" paradigm across all corpora, but interpretations vary greatly according to pressing issues for each context.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Globalizing Nature ⛰️ 🪵 🌎
+- Since early 1990s: Environmental issues increasingly framed as global & climate-related.
+- "Climatization" of environmental challenges redefined environmental action.
+- Threats to nature seen as *global* and *systemic*.
+
+| **Language**                             | **Position of Climate Change** | **Conn. Nodes**                                                                                       | **Framing**                                                                                                                          |
+| ---------------------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **English** <br><br>*Climate Change*     | Central connecting node        | • Land use & food security<br>• Global health<br>• Global governance<br>• Civil society participation | Climate change connects virtually all environmental issues; <br>serves as bridge between social movements and environmental research |
+| **French** <br><br>*Development durable* | Less central but significant   | • Sustainable development<br>• Public policy<br>• Food security<br>• Energy transition                | Strong emphasis on local government and territorial actions; <br> sustainability and climate action linked to local governance       |
+| **Spanish** <br><br>*Medio ambiente*     | Not climate-centered           | • Environmental education<br>• Trade policies<br>• Development models                                 | Environmental issues disconnected from climate change; <br>focus on quality of life and structural development changes               |
+
+🥡 **Takeaway:** Relationships between globalization, environment, and climate are heavily contextual
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Universities at Crossroads 🎓🏛 
+### Between Technology and Internationalization 
+- HEIs and knowledge institutions mediate between local needs and international competition 
+- Flows of ideas and people are becoming more complex
+
+| **Language** | **Central Themes**                                                                        | **Conn. Nodes**                                                                  | **Framing**                                                                                    |
+| ------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **English**  | • Internationalization<br>• English as foreign language<br>• Education policies & reforms | • Knowledge society/economy<br>• Modern world <br>• New technologies             | Construction of global higher education system; <br>quality assurance focus                    |
+| **French**   | • Professional training<br>• Employment outcomes<br>• Post-secondary education            | • Earlier education stages <br>• Communication technologies <br>• Gender studies | Labor market orientation; <br>teaching methods and practices; <br>praxis-related concerns      |
+| **Spanish**  | • Internationalization<br>• Quality assurance<br>• Technology adoption                    | • Work conditions<br>• Capitalist globalization                                  | Higher integration with other research topics; <br>relevance to new global economic conditions |
+
+🥡 **Takeaway:** Higher Ed. is not reduced to a global/local dichotomy; place-based relations emerge in relation to evaluative cultures, institutional traditions and disciplinary histories at each context.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Distinction and Divergence  🇫‍🇷 🇪🇸
+
+| **Language** | **Distinctive Object**                                                 | **Key Features**                                                                                                                       | **Framing**                                                                                                                                                                                                                          |
+| ------------ | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **French**   | **Collectivités locales** <br><br>(Local communities/<br> governments) | • Territory-centered approach<br>• Sustainability emphasis<br>• Public action focus<br>• Social    nological innovati                  | **Globalization as local:**<br>• Policy process primarily implemented at local level<br>• Local actors as primary innovators<br>• Development viewed as sustainable, economic, and territorial                                       |
+| **Spanish**  | **Apertura comercial**<br> <br>(Traded liberalization) | Connects to multiple topics:<br> • Social movements <br> • Economic reforms<br> • Development <br> • Foreign policy | **Globalization as *imposed* reforms:**<br>• Not framed as a technical issue (unlike in English)<br>• Critical accounts of trade openness impact<br>• Critique of free trade agreements as development instruments for Latin America |
+
+🥡 **Takeaway:** Language-specific research shows the role of regional experiences and intellectual traditions to research globalization (beyond English-like framings).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Language and Diversity in Global Research 👨‍🔬 📖
+
+- "Globalization" research is **highly context-dependent**, shaped by situated perspectives that experience global flows differently
+- **English-speaking research** emphasizes finance, global governance, business competition, and knowledge economy at global scale
+- **French-speaking literature** focuses on territorial grounding, historical context, and multi-scale integration (local, regional, European)
+- **Spanish-speaking scholarship** centers on migration, trade liberalization, development challenges, and social movements in Latin America
+- **Language rises as a critical standpoint**
+	- **Method-wise**, it offers a robust data source (connected to steady knowledge infrastructures). 
+	- **Community-building**, it offers good insights on how specific sensibilities arise language-bounded.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Implications: literature and future research ⏩ 🚆
+
+- Globalization is not merely an economic concept but implies epistemological and disciplinary transformations
+- Rather than viewing globalization as simply additive or aggregative, our analysis reveals it as a means of linking diverse and asynchronous aspects of social existence
+- Social science serves as a critical mediator of globality through these varied linguistic and conceptual landscapes
+- Further research should 
+	- Expand and better describe these contrasts. 
+	- Connect these findings to more in-depth qualitative insights. 
+	- Iterate loops to inform analysis/processing/interpretation stages.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Book Project 📚
+### Mediators for Globality: The Language of Global Research in English, French and Spanish. 
+
+
+1. *What is in a term?* Detecting Mediators for Globality (Introduction)
+2. *Globalization beyond economics.* What else is out there? (Theoretical Discussion)
+3. *What is in these (global) maps?* A methods run-through. 
+4. *Upholding Knowledge:* Infrastructures and Circuits for Global Flows. 
+5. *Think global?* Globalization around the globe. Topics and Places. 
+6. Chapter for English-based research. 
+7. Chapter for French-based research. 
+8. Chapter for Spanish-based research. 
+9. Organization and Change: social movements and political alternatives.
+10. The Local: territory and sustainability. 
+11. Development: industrialization, dependency, and re-imagining the countryside. 
+12. Environmental Governance: assembling the planetary. 
+13. Conclusion.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="#efe9d9" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1900px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <span style="color:rgb(20, 56, 101)">*Thank you!*  </span> 
+# <span style="color:rgb(130, 9, 51)">*Merci !*  </span> 
+# <span style="color:rgb(174, 166, 91)">*¡Gracias!*  </span>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/elapsed-time-bar/elapsed-time-bar.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                ElapsedTimeBar
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        id: 'toggle-overview',
+                        title: 'Toggle overview (O)',
+                        icon: '<i class="fa fa-th"></i>',
+                        action: 'Reveal.toggleOverview();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":"true","slideNumber":"true","center":true,"transition":"concave","transitionSpeed":"default","width":"1900","height":"1200","margin":"0.25","minScale":"0.1","maxScale":"0.95"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
